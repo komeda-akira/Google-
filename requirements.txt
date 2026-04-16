@@ -1,1 +1,2 @@
-requests>=2.31.0icalendar>=5.0.0
+requests>=2.31.0
+icalendar>=5.0.0
