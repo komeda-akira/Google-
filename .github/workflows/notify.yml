@@ -49,3 +49,5 @@ jobs:
             git commit -m "chore: update calendar iCal snapshot hash"
             git push
           fi
+            git push
+          fi
