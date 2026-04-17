@@ -47,5 +47,5 @@ jobs:
             echo "No hash file change to commit."
           else
             git commit -m "chore: update calendar iCal snapshot hash"
-            git push
+            git pull --rebase origin main
           fi
