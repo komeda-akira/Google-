@@ -47,7 +47,7 @@ def build_summary(ical_bytes: bytes, max_lines: int = 40) -> str:
     cal = Calendar.from_ical(ical_bytes)
     now = datetime.now(JST)
     start_today = now.replace(hour=0, minute=0, second=0, microsecond=0)
-    window_end = now + timedelta(days=14)
+    window_end = now + timedelta(days=30)
     rows: list[tuple[datetime, str]] = []
 
     for component in cal.walk():
@@ -75,7 +75,7 @@ def build_summary(ical_bytes: bytes, max_lines: int = 40) -> str:
     rows.sort(key=lambda x: x[0])
     lines = [f"【カレンダーに変更がありました】({now.strftime('%Y-%m-%d %H:%M')} 時点)"]
     lines.append("")
-    lines.append("▼ 直近の予定（参考・最大14日先まで）")
+    lines.append("▼ 直近の予定（参考・最大30日先まで）")
     if not rows:
         lines.append("（表示できる予定がありません）")
     else:
